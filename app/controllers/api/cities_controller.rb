@@ -1,5 +1,6 @@
 class Api::CitiesController < ApplicationController
 	def boston
-		render text: "boston yeah"
+		city = City.first
+		render json: city
 	end
 end
