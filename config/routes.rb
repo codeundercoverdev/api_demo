@@ -14,6 +14,17 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
+
+  get 'new_york_web_app', to: 'cities#new_york'
+  # namespace :web_app do
+  #   get 'new_york_web_app'
+
+  # end
+
+  namespace :api do
+    get 'boston_api', to: 'cities#boston'
+  end
+
   # Example resource route with options:
   #   resources :products do
   #     member do
