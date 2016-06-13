@@ -7,5 +7,8 @@ class CitiesController < ApplicationController
 	def boston
 		render text: "boston yeah"
 	end
+
+	def create
+	end
 end
  
