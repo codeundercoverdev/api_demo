@@ -1,6 +1,6 @@
 class CitiesController < ApplicationController
 	def new_york
-		@city1 = City.new
+		@city = City.new
 		# render text: "we are in new york"
 	end
 
@@ -9,6 +9,15 @@ class CitiesController < ApplicationController
 	end
 
 	def create
+		puts "yolo #{params[:city]}"
+		@city = City.new(city_params)
+		@city.save
+	end
+
+	private
+
+	def city_params
+		params.require(:city).permit(:name, :state)
 	end
 end
  

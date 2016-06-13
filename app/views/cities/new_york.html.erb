@@ -1,7 +1,7 @@
 hello. welcome to new york!
 
-<%= form_for @city1, url: {action: "create"} do |f| %>
-  <%= f.text_field :name %>
-  <%= f.text_field :state %>
+<%= form_for @city, url: {action: "create"} do |f| %>
+  <%= f.text_field :name, placeholder: "city name" %>
+  <%= f.text_field :state, placeholder: "state initials" %>
   <%= f.submit "Create" %>
 <% end %>
