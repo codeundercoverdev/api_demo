@@ -12,6 +12,7 @@ class CitiesController < ApplicationController
 		puts "yolo #{params[:city]}"
 		@city = City.new(city_params)
 		@city.save
+		render 'new_york'
 	end
 
 	private
