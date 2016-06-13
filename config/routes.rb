@@ -25,6 +25,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     get 'boston_api', to: 'cities#boston'
+    resources :cities
   end
 
   # Example resource route with options:
