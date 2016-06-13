@@ -1,5 +1,6 @@
 class CitiesController < ApplicationController
 	def new_york
+		@city1 = City.new
 		# render text: "we are in new york"
 	end
 

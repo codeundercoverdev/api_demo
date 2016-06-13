@@ -16,6 +16,8 @@ Rails.application.routes.draw do
 
 
   get 'new_york_web_app', to: 'cities#new_york'
+
+  resources :cities
   # namespace :web_app do
   #   get 'new_york_web_app'
 
