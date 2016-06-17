@@ -6,10 +6,20 @@ class Api::CitiesController < Api::ApplicationController
 
 
 	def create
-		puts "yolo #{params[:city]}"
+		a = params #returns ruby hash of params
+		if a[:city][:name] != "Detroit"
+			puts "not in detroit"
+		else
+			puts "we are in detroit... why?"
+		end
+
+
+
+
+
 		@city = City.new(city_params)
 		if @city.save
-			head 200
+			render json: @city
 		else
 			head 422
 		end
