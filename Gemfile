@@ -39,6 +39,8 @@ group :development, :test do
 end
 
 gem 'devise'
+gem 'devise_token_auth'
+gem 'omniauth'
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views

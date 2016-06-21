@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  # mount_devise_token_auth_for 'ApiUser', at: 'api'
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -25,6 +26,12 @@ Rails.application.routes.draw do
   # end
 
   namespace :api do
+    mount_devise_token_auth_for 'ApiUser', at: :auth, controllers: {
+      token_validations:  'api/token_validations',
+      sessions:           'api/sessions',
+      registrations:      'api/registrations',
+      confirmations:      'api/confirmations'
+    }
     get 'boston_api', to: 'cities#boston'
     resources :cities
   end
