@@ -1,5 +1,10 @@
-class Api::CitiesController < Api::ApplicationController
+class ApiCitiesController < ApplicationController
+	include ApplicationHelper
+	before_action :authenticate_api_user!, if: :api_request?
+	before_action :authenticate_user!, if: :web_request?
+
 	def boston
+		puts "the current user is #{current_api_user.inspect}"
 		city = City.first
 		render json: city
 	end

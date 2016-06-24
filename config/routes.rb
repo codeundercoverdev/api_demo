@@ -26,14 +26,14 @@ root 'cities#boston'
   # end
 
   scope :api do
-    mount_devise_token_auth_for 'ApiUser', at: :auth, controllers: {
-      token_validations:  'api/token_validations',
-      sessions:           'api/sessions',
-      registrations:      'api/registrations',
-      confirmations:      'api/confirmations'
-    }
-    get 'boston_api', to: 'cities#boston'
-    resources :cities
+     mount_devise_token_auth_for 'ApiUser', at: :auth #, controllers: {
+    #   token_validations:  'api/token_validations',
+    #   sessions:           'api/sessions',
+    #   registrations:      'api/registrations',
+    #   confirmations:      'api/confirmations'
+    # }
+    get 'boston_api', to: 'api_cities#boston'
+    resources :api_cities
   end
 
   # Example resource route with options:

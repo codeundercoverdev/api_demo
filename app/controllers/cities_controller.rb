@@ -10,7 +10,6 @@ class CitiesController < ApplicationController
 	end
 
 	def boston
-		puts "the current user is #{current_api_user.inspect}"
 		puts "in main cities controller boston action"
 		render json: City.first
 	end
