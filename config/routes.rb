@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-
+root 'cities#boston'
 
   get 'new_york_web_app', to: 'cities#new_york'
 
@@ -25,7 +25,7 @@ Rails.application.routes.draw do
 
   # end
 
-  namespace :api do
+  scope :api do
     mount_devise_token_auth_for 'ApiUser', at: :auth, controllers: {
       token_validations:  'api/token_validations',
       sessions:           'api/sessions',

@@ -1,11 +1,18 @@
 class CitiesController < ApplicationController
+	include ApplicationHelper
+	before_action :authenticate_api_user!, if: :api_request?
+	before_action :authenticate_user!, if: :web_request?
+
+
 	def new_york
 		@city = City.new
 		# render text: "we are in new york"
 	end
 
 	def boston
-		render text: "boston yeah"
+		puts "the current user is #{current_api_user.inspect}"
+		puts "in main cities controller boston action"
+		render json: City.first
 	end
 
 	def create
